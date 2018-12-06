@@ -1,6 +1,7 @@
 module Thing exposing
     ( AliasOfBytes, WrappedOpenBytes(..), WrappedClosedBytes
     , AliasOfInternal, AliasOfInternalAlias, WrappedOpenInternal(..), WrappedClosedInternal, WrappedOpenInternalAlias(..), WrappedClosedInternalAlias
+    , AliasOfPrivate, AliasOfPrivateAlias, WrappedOpenPrivate(..), WrappedClosedPrivate, WrappedOpenPrivateAlias(..), WrappedClosedPrivateAlias
     )
 
 {-|
@@ -14,6 +15,11 @@ module Thing exposing
 # Internal
 
 @docs AliasOfInternal, AliasOfInternalAlias, WrappedOpenInternal, WrappedClosedInternal, WrappedOpenInternalAlias, WrappedClosedInternalAlias
+
+
+# Private
+
+@docs AliasOfPrivate, AliasOfPrivateAlias, WrappedOpenPrivate, WrappedClosedPrivate, WrappedOpenPrivateAlias, WrappedClosedPrivateAlias
 
 -}
 
@@ -72,3 +78,45 @@ type WrappedOpenInternalAlias
 {-| -}
 type WrappedClosedInternalAlias
     = WrappedClosedInternalAlias InternalAlias
+
+
+
+-- PRIVATE
+
+
+type Private
+    = Private
+
+
+type alias PrivateAlias =
+    {}
+
+
+{-| -}
+type alias AliasOfPrivate =
+    Private
+
+
+{-| -}
+type alias AliasOfPrivateAlias =
+    PrivateAlias
+
+
+{-| -}
+type WrappedOpenPrivate
+    = WrappedOpenPrivate Private
+
+
+{-| -}
+type WrappedClosedPrivate
+    = WrappedClosedPrivate Private
+
+
+{-| -}
+type WrappedOpenPrivateAlias
+    = WrappedOpenPrivateAlias PrivateAlias
+
+
+{-| -}
+type WrappedClosedPrivateAlias
+    = WrappedClosedPrivateAlias PrivateAlias
